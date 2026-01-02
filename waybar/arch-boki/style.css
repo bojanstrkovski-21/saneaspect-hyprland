@@ -1,0 +1,329 @@
+* {
+    /* `otf-font-awesome` is required to be installed for icons */
+    font-family: 'MesloLGS Nerd Font Propo';
+    font-size: 14px;
+}
+
+window#waybar {
+    background-color: rgba(45, 53, 59, 0.7);
+    border-bottom: 3px solid rgba(100, 114, 125, 0.5);
+    border-radius: 5px;
+    color: #ffffff;
+    transition-property: background-color;
+    transition-duration: .5s;
+}
+
+
+/* you can set a style on hover for any module like this */
+#wireplumber:hover {
+    background-color: #a37800;
+}
+
+#workspaces {
+    font-family: 'MesloLGS Nerd Font';
+    /*border: 1px solid #a7c080;*/    
+    margin-left: 6px;
+}
+
+#workspaces button {
+    background: transparent;
+    box-shadow: none;
+    text-shadow: none;
+    border: none;
+    outline: none;
+    color: #3a515d;
+    font-family: 'MesloLGS Nerd Font';
+    /*font-size: 16px;*/
+    padding: 0px 6px;
+    /*padding: 6px 4px;*/
+    border-radius: 13px;
+    /*margin-top: 1px;
+    margin-bottom: 1px;*/
+    margin: 0 1.5px;
+}
+
+#workspaces button:hover {
+    color: #50fa7b; /* Dracula green */
+    background: transparent;
+    box-shadow: none;
+    border: none;
+    outline: none;
+}
+
+
+#workspaces button.persistent {
+    color: #e69875;
+    font-size: 14px;
+}
+
+#workspaces button.empty {
+    color: #7a8478;
+}
+
+#workspaces button.active {
+    /*color: #B59AE4;*/
+    color: #a7c080;
+    font-size: 14px;
+}
+
+
+#window {
+    font-weight: bold;
+    margin-bottom: 7px;
+    margin-top: 6px;
+    padding-left: 8px;
+    padding-right: 8px;
+    /*border: 1px solid #d3c6aa;*/
+    border-radius: 4px;
+    box-shadow: inset  -1px -2px #d3c6aa;
+    font-family: 'MesloLGS Nerd Font';
+    color: #d3c6aa;
+
+}
+
+
+
+#clock,
+#battery,
+#cpu,
+#memory,
+#disk,
+#temperature,
+#backlight,
+#network,
+#wireplumber,
+#custom-media,
+#tray,
+#mode,
+#language,
+#custom-keyboard,
+#custom-power,
+#idle_inhibitor,
+#scratchpad,
+#power-profiles-daemon,
+#mpd,
+#custom-wall {
+    font-family: 'MesloLGS Nerd Font';
+    font-size: 16px;
+    padding: 0 12px;
+    color: #3a515d;
+    border-radius: 4px;
+    margin: 6px 0px;
+
+}
+
+#custom-wall {
+    color: #112f50;
+    font-family: MesloLGS Nerd Font Propo;
+    background-color: #7fbbb3;
+}
+
+#workspaces {
+    margin-bottom: 7px;
+    margin-top: 5px;
+    border-radius: 5px;
+    box-shadow: inset  1px -2px #d3c6aa;
+}
+
+#window.focused {
+    box-shadow: inset  -2px -1px #a7c080;
+    border: 1px solid #d3c6aa;  
+}
+
+#clock {
+    /*background-color: #64727D;*/
+    /*background-color: #7fbbb3;*/
+    color: #83c092;
+    /*border: 1px solid #d3c6aa;*/
+    /*border-radius: 4px;*/
+    box-shadow: inset  -1px -2px #d3c6aa;
+    margin-top: 6px;
+    margin-bottom: 7px;
+    padding-bottom: 1px;
+    font-size: 17px;
+    font-weight: bold;
+}
+
+#battery {
+    background-color: #ffffff;
+    color: #000000;
+}
+
+#battery.charging, #battery.plugged {
+    color: #ffffff;
+    background-color: #26A65B;
+}
+
+/* Using steps() instead of linear as a timing function to limit cpu usage */
+#battery.critical:not(.charging) {
+    background-color: #f53c3c;
+    color: #ffffff;
+    animation-name: blink;
+    animation-duration: 0.5s;
+    animation-timing-function: steps(12);
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+}
+
+#power-profiles-daemon {
+    padding-left: 6px;
+}
+
+#power-profiles-daemon.performance {
+    background-color: #f53c3c;
+    color: #ffffff;
+}
+
+#power-profiles-daemon.balanced {
+    background-color: #2980b9;
+    color: #ffffff;
+}
+
+#power-profiles-daemon.power-saver {
+    background-color: #2ecc71;
+    color: #000000;
+}
+
+
+#cpu {
+    background-color: #a7c080;
+    color: #112F50;
+
+}
+
+#memory {
+    background-color: #d699b6;
+    /*background-color: #9b59b6;*/
+    color: #112f50;
+}
+
+#disk {
+    background-color: #964B00;
+}
+
+#backlight {
+    background-color: #90b1b1;
+}
+
+#network {
+    background-color: #2980b9;
+}
+
+#network.disconnected {
+    background-color: #f53c3c;
+}
+
+#wireplumber {
+    background-color: #dbbc7f;
+    color: #112f50;
+}
+
+#wireplumber.muted {
+    background-color: #90b1b1;
+    color: #2a5c45;
+}
+
+#custom-media {
+    background-color: #66cc99;
+    color: #2a5c45;
+    min-width: 100px;
+}
+
+#custom-media.custom-spotify {
+    background-color: #66cc99;
+}
+
+#custom-media.custom-vlc {
+    background-color: #ffa000;
+}
+
+#temperature {
+    background-color: #e69875;
+    /*background-color: #f0932b;*/
+    color: #112f50;
+}
+
+#temperature.critical {
+    background-color: #e67e80;
+}
+
+#tray {
+    background-color: #112f50;
+    /*background-color: #2980b9;*/
+    margin-right: 4px;
+}
+
+#tray > .passive {
+    -gtk-icon-effect: dim;
+}
+
+#tray > .needs-attention {
+    -gtk-icon-effect: highlight;
+    background-color: #eb4d4b;
+}
+
+#idle_inhibitor {
+    background-color: #7a8478;
+    color: #d3c6aa;
+    padding-left: 5px;
+}
+
+#idle_inhibitor.activated {
+    background-color: #d3c6aa;
+    color: #2d353b;
+}
+
+
+#mpd {
+    background-color: #66cc99;
+    color: #2a5c45;
+}
+
+#mpd.disconnected {
+    background-color: #f53c3c;
+}
+
+#mpd.stopped {
+    background-color: #90b1b1;
+}
+
+#mpd.paused {
+    background-color: #51a37a;
+}
+
+#language,
+#custom-keyboard {
+    /*background: #00b093;*/
+    background: #83c092;
+    /*color: #740864;*/
+    color: #17274A;
+    padding: 0 5px;
+    /*margin: 0 0px;*/
+    /*min-width: 16px;*/
+}
+
+#custom-keyboard {
+    font-family: MesloLGS Nerd Font Propo;
+}
+
+#keyboard-state {
+    background: #97e1ad;
+    color: #000000;
+    padding: 0 0px;
+    margin: 0 5px;
+    min-width: 16px;
+}
+
+#keyboard-state > label {
+    padding: 0 5px;
+}
+
+#keyboard-state > label.locked {
+    background: rgba(0, 0, 0, 0.2);
+}
+
+#custom-power {
+    background-color: #e67e80;
+    padding-left: 15px;
+    padding-bottom: 1px;
+}
